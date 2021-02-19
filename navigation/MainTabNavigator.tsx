@@ -5,12 +5,14 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import CameraScreen from '../screens/CameraScreen';
+import ChatsScreen from '../screens/ChatsScreen';
+import CallsScreen from "../screens/CallsScreen";
 import {MainTabParamList, TabOneParamList, TabTwoParamList} from '../types';
 
 
 import { Fontisto } from '@expo/vector-icons';
+
 
 
 const MainTab = createMaterialTopTabNavigator<MainTabParamList>();
@@ -37,7 +39,7 @@ export default function MainTabNavigator() {
             }}>
             <MainTab.Screen
                 name="Kamera"
-                component={TabOneNavigator}
+                component={CameraScreen}
                 options={{
                     tabBarIcon: ({color}) => <Fontisto name="camera" size={18} color={color} />,
                     tabBarLabel:()=>null
@@ -46,11 +48,11 @@ export default function MainTabNavigator() {
             />
             <MainTab.Screen
                 name="Sohbetler"
-                component={TabTwoNavigator}
+                component={ChatsScreen}
             />
             <MainTab.Screen
                 name="Aramalar"
-                component={TabTwoNavigator}
+                component={CallsScreen}
             />
         </MainTab.Navigator>
     );
@@ -71,7 +73,7 @@ function TabOneNavigator() {
         <TabOneStack.Navigator>
             <TabOneStack.Screen
                 name="TabOneScreen"
-                component={TabOneScreen}
+                component={CameraScreen}
                 options={{headerTitle: 'Tab One Title'}}
             />
         </TabOneStack.Navigator>
@@ -85,7 +87,7 @@ function TabTwoNavigator() {
         <TabTwoStack.Navigator>
             <TabTwoStack.Screen
                 name="TabTwoScreen"
-                component={TabTwoScreen}
+                component={ChatsScreen}
                 options={{headerTitle: 'Tab Two Title'}}
             />
         </TabTwoStack.Navigator>
