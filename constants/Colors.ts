@@ -8,6 +8,7 @@ export default {
     tint: tintColorLight,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorLight,
+    chatBubbleBackground:'#DCF8C5'
   },
   dark: {
     text: '#fff',

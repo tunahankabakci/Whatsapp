@@ -2,7 +2,7 @@ import * as React from 'react';
 import {FlatList, View} from 'react-native';
 
 import ChatListItem from "../components/ChatListItem";
-import chatRooms from "../Data/ChatRooms";
+import chatRooms from "../data/ChatRooms";
 
 export default function ChatsScreen() {
   return (

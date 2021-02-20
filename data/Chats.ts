@@ -59,7 +59,7 @@ export default {
         },
     }, {
         id: 'm7',
-        content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+        content: 'Big data is really interesting. Cannot wait to go through all the material.',
         createdAt: '2020-10-03T14:53:00.000Z',
         user: {
             id: 'u1',

@@ -51,7 +51,7 @@ const renderDate = (date: String) => {
         return (
             <Text>{d.format('HH:mm')}</Text>
         )
-    } else if (now.diff(d, 'days') == 1) {
+    } else if (now.diff(d, 'days') === 1) {
         return (
             <Text>Dün</Text>
         )
