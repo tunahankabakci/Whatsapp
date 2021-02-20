@@ -9,14 +9,6 @@ export type MainTabParamList = {
   Aramalar: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
-
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
-};
-
 export type User = {
     id: String;
     name:String;

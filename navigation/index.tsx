@@ -1,8 +1,4 @@
-import {
-    NavigationContainer,
-    DefaultTheme,
-    DarkTheme,
-} from "@react-navigation/native";
+import {DarkTheme, DefaultTheme, NavigationContainer,} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import * as React from "react";
 import {ColorSchemeName} from "react-native";
@@ -13,10 +9,9 @@ import {RootStackParamList} from "../types";
 import MainTabNavigator from "./MainTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
 
-import {MaterialCommunityIcons} from "@expo/vector-icons";
-
-import {Ionicons} from "@expo/vector-icons";
+import {FontAwesome5, Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
 import {View} from "../components/Themed";
+import ChatRoomScreen from "../screens/ChatRoomScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -45,8 +40,8 @@ function RootNavigator() {
             screenOptions={{
                 headerStyle: {
                     backgroundColor: Colors.light.tint,
-                    shadowOpacity:0,
-                    elevation:0,
+                    shadowOpacity: 0,
+                    elevation: 0,
                 },
                 headerTintColor: Colors.light.background,
                 headerTitleAlign: "left",
@@ -81,6 +76,49 @@ function RootNavigator() {
                     ),
                 }}
             />
+
+            <Stack.Screen
+                name="ChatRoom"
+                component={ChatRoomScreen}
+                options={({route}) => ({
+                    title: route.params.name,
+                    headerRight: () => (
+                        <View
+                            style={{
+                                backgroundColor: Colors.light.tint,
+                                flexDirection: "row",
+                                marginRight: 10,
+                                width: 110,
+                                justifyContent: "space-between",
+                                marginBottom: -15,
+                            }}
+                        >
+                            <FontAwesome5
+                                name="video"
+                                size={20}
+                                color={Colors.light.background}
+                                style={{
+                                    marginRight:8
+                                }}
+                            />
+                            <Ionicons
+                                name="md-call"
+                                size={20}
+                                color={Colors.light.background}
+                            />
+                            <MaterialCommunityIcons
+                                name="dots-vertical"
+                                size={24}
+                                color={Colors.light.background}
+                                style={{
+                                    marginTop:-1.5,
+                                }}
+                            />
+                        </View>
+                    )
+                })}
+            />
+
             <Stack.Screen
                 name="NotFound"
                 component={NotFoundScreen}
