@@ -12,6 +12,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import {FontAwesome5, Ionicons, MaterialCommunityIcons} from "@expo/vector-icons";
 import {View} from "../components/Themed";
 import ChatRoomScreen from "../screens/ChatRoomScreen";
+import ContactsScreen from "../screens/ContactsScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -98,7 +99,7 @@ function RootNavigator() {
                                 size={20}
                                 color={Colors.light.background}
                                 style={{
-                                    marginRight:8
+                                    marginRight: 8
                                 }}
                             />
                             <Ionicons
@@ -111,12 +112,17 @@ function RootNavigator() {
                                 size={24}
                                 color={Colors.light.background}
                                 style={{
-                                    marginTop:-1.5,
+                                    marginTop: -1.5,
                                 }}
                             />
                         </View>
                     )
                 })}
+            />
+
+            <Stack.Screen
+                name="Contacts"
+                component={ContactsScreen}
             />
 
             <Stack.Screen
